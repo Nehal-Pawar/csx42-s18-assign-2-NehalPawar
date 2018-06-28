@@ -1,6 +1,6 @@
 package fourWayStreetLights.service;
 
-public class NorthStreetLight implements StreetLightsStateI{
+public class WestStreetLight implements StreetLightsStateI{
 
 public void goNorth(){}
 

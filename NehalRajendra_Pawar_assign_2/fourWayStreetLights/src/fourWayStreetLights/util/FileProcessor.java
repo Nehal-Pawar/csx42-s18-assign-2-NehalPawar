@@ -3,6 +3,7 @@ package fourWayStreetLights.util;
 import java.util.*;
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.FileNotFoundException;
 
 public class FileProcessor {
 	FileReader F = null;
@@ -19,10 +20,10 @@ public class FileProcessor {
 			zoom.add(number);
 			}
 		}
-		catch (Exception e) {
-		 System.out.println("Error" + e.toString());
-		System.exit(1);
-		 }
+		catch (FileNotFoundException e) {
+			System.out.println("File not found at location: " + InputFileName);
+			System.exit(1);
+		}
 		return zoom;
 	}
 	public String readLine() {

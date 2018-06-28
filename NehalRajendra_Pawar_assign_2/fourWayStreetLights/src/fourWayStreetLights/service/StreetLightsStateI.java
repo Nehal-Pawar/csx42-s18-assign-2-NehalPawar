@@ -2,7 +2,7 @@ package fourWayStreetLights.service;
 
 public interface StreetLightsStateI{
 /*
-//All methods to be implemented here
+**All methods to be implemented in child class
 */
 
 public void goNorth();
