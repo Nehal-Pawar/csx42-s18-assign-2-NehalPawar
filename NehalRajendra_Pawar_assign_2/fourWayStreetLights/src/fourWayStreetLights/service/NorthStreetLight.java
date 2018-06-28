@@ -1,8 +1,11 @@
 package fourWayStreetLights.service;
 import fourWayStreetLights.util.MyLogger;
+import java.util.*;
+
 
 public class NorthStreetLight implements StreetLightsStateI{
 StretLightsContext Obj1 ;
+public static List<String> NorthCars = new ArrayList<>();
 public NorthStreetLight (StretLightsContext Obj2){
 this.Obj1=Obj2;
 }
@@ -32,5 +35,8 @@ public StreetLightsStateI goRed(){
 MyLogger.writeMessage ("North Signal is Red.",MyLogger.DebugLevel.AllStates);
 return new DefaultStreetLight(Obj1);}
 
+public void RemoveCars(){
+NorthCars.remove(0);
+}
 
 }

@@ -3,7 +3,7 @@ import fourWayStreetLights.util.FileProcessor;
 import fourWayStreetLights.util.Results;
 import fourWayStreetLights.util.MyLogger;
 import fourWayStreetLights.service.StretLightsContext;
-import fourWayStreetLights.test.MyArrayListTest;
+import fourWayStreetLights.service.*;
 import java.util.*;
 
 public class Driver
@@ -21,10 +21,9 @@ public class Driver
 		StretLightsContext Obj1 = new StretLightsContext();
 		FileProcessor F1 = new FileProcessor();
 		List<String> zoom = new ArrayList<>();
-		List<String> NorthCars = new ArrayList<>();
-		List<String> EastCars = new ArrayList<>();
+		
 		List<String> WestCars = new ArrayList<>();
-		List<String> SouthCars = new ArrayList<>();
+
 		zoom=F1.openFile(INPUTFILE);
 		System.out.println(zoom);
 		for (String temp : zoom) {
@@ -37,8 +36,10 @@ public class Driver
             case "North":
                 //System.out.println("one");
 		if(splited[1].equals("Green")){
-			NorthCars.remove(NorthCars.size()-1);
+			Results.storeNewResult("Cars in Queue "+NorthStreetLight.NorthCars);
 			Obj1.goNorth();
+			Obj1.RemoveCars();
+			Results.storeNewResult("Cars in Queue "+NorthStreetLight.NorthCars);
 		}
 		else if(splited[1].equals("Red")){
 			Obj1.goRed();
@@ -46,14 +47,20 @@ public class Driver
 		}
 		else{
 			String[] splitedCars = splited[1].split(",");
-			NorthCars.addAll(Arrays.asList(splitedCars));
+			NorthStreetLight.NorthCars.addAll(Arrays.asList(splitedCars));
+			
 		}
                 break;
 
             case "East":
                if(splited[1].equals("Green")){
-			EastCars.remove(EastCars .size()-1);
+			//EastCars.remove(EastCars .size()-1);
+			
+			Results.storeNewResult("Cars in Queue "+EastStreetLight.EastCars);
 			Obj1.goEast();
+			Obj1.RemoveCars();
+			Results.storeNewResult("Cars in Queue "+EastStreetLight.EastCars);
+
 		}
 		else if(splited[1].equals("Red")){
 			Obj1.goRed();
@@ -61,13 +68,18 @@ public class Driver
 		}
 		else{
 			String[] splitedCars = splited[1].split(",");
-			EastCars.addAll(Arrays.asList(splitedCars));
+			EastStreetLight.EastCars.addAll(Arrays.asList(splitedCars));
 		}
                 break;
             case "West":
                 if(splited[1].equals("Green")){
-			WestCars.remove(WestCars.size()-1);
+			Results.storeNewResult("Cars in Queue "+NorthStreetLight.NorthCars);
 			Obj1.goWest();
+			Obj1.RemoveCars();
+			Results.storeNewResult("Cars in Queue "+NorthStreetLight.NorthCars);
+
+
+			
 		}
 		else if(splited[1].equals("Red")){
 			Obj1.goRed();
@@ -79,21 +91,25 @@ public class Driver
                 break;
        	    case "South":
                 if(splited[1].equals("Green")){
-			SouthCars.remove(SouthCars.size()-1);
+			Results.storeNewResult("Cars in Queue "+SouthStreetLight.SouthCars);
 			Obj1.goSouth();
+			Obj1.RemoveCars();
+			Results.storeNewResult("Cars in Queue "+SouthStreetLight.SouthCars);
+
 		}
 		else if(splited[1].equals("Red")){
 			Obj1.goRed();
 		}
 		else{
 			String[] splitedCars = splited[1].split(",");
-			SouthCars.addAll(Arrays.asList(splitedCars));
+			SouthStreetLight.SouthCars.addAll(Arrays.asList(splitedCars));
 		}
 
                 break;
             default:
-                System.out.println("Direction not match");
-        }
+MyLogger.writeMessage ("Direction not match",MyLogger.DebugLevel.AllStates);
+
+            }
 	}		
 	}
 }

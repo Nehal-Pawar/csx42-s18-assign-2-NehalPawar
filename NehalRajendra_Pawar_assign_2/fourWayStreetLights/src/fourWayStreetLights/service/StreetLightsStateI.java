@@ -15,4 +15,5 @@ public StreetLightsStateI goEast();
 
 public StreetLightsStateI goRed();
 
+public void RemoveCars();
 }

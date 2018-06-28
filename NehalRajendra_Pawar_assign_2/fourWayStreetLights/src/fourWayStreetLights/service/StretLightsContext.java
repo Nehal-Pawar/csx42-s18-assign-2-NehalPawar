@@ -38,5 +38,6 @@ public StreetLightsStateI goRed(){
 CurrentState=CurrentState.goRed();
 return CurrentState;
 }
-
+public void RemoveCars(){
+CurrentState.RemoveCars();}
 }

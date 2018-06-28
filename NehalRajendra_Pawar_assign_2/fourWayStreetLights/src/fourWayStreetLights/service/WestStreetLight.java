@@ -4,6 +4,7 @@ import fourWayStreetLights.util.MyLogger;
 public class WestStreetLight implements StreetLightsStateI{
 
 StretLightsContext Obj1 ;
+public static	List<String> WestCars = new ArrayList<>();
 public WestStreetLight (StretLightsContext Obj2){
 this.Obj1=Obj2;
 }
@@ -28,4 +29,7 @@ MyLogger.writeMessage ("West Signal is Red.",MyLogger.DebugLevel.AllStates);
 
 return new DefaultStreetLight(Obj1);}
 
+public void RemoveCars(){
+WestCars.remove(0);
+}
 }

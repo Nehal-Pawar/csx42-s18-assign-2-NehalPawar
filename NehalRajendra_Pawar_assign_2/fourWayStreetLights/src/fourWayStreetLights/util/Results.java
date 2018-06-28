@@ -4,10 +4,11 @@ import java.util.List;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.util.Vector;
+import fourWayStreetLights.util.MyLogger;
 
 public class Results  implements FileDisplayInterface, StdoutDisplayInterface{
 
-	private List<String> TestResult = new Vector<String>();
+	public static List<String> TestResult = new Vector<String>();
 	String result = "";
 	/*wriet to output file the list that stores result*/
 	public void writeToFile(String fileName) {
@@ -32,17 +33,10 @@ public class Results  implements FileDisplayInterface, StdoutDisplayInterface{
 		System.out.println(s);
 	}
 	/* store and display result from all tests*/
-	public void storeNewResult(String result){
+	public static void storeNewResult(String result){
 		TestResult.add(result);
-		writeToStdout(result);
+		MyLogger.writeMessage (result,MyLogger.DebugLevel.AllStates);
+		//writeToStdout(result);
 	}
-	/* write result from test in desired format*/
-	public String CreateOutput(boolean res,String CaseName,String Error){
-		if(res)
-			result =  "\nTest : " + CaseName+ " - Passed ";
-		else
-			result =  "\nTest : " + CaseName+ " - Failed. Error  : "+ Error;
-					
-		return result;
-	}	
+		
 }

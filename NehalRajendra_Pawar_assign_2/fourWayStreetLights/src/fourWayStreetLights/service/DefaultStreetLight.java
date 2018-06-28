@@ -13,20 +13,24 @@ public StreetLightsStateI goNorth(){
 }
 
 public StreetLightsStateI goWest(){
-MyLogger.writeMessage ("Current Context State changed to West Green",MyLogger.DebugLevel.AllStates);
+Results.storeNewResult("Current Context State changed to West Green");
 return new WestStreetLight(Obj1);
 }
 
 public StreetLightsStateI goSouth(){
-MyLogger.writeMessage ("Current Context State changed to South Green",MyLogger.DebugLevel.AllStates);
+Results.storeNewResult("Current Context State changed to South Green");
 return new SouthStreetLight(Obj1);}
 
 public StreetLightsStateI goEast(){
-MyLogger.writeMessage ("Current Context State changed to East Green",MyLogger.DebugLevel.AllStates);
+Results.storeNewResult("Current Context State changed to East Green");
 return new EastStreetLight(Obj1);}
 
 public StreetLightsStateI goRed(){
-System.out.println("Signal Already Red.");
+Results.storeNewResult("Signal Already Red.");
+
+//System.out.println("Signal Already Red.");
 	return Obj1;
 }
+
+public void RemoveCars(){}
 }
