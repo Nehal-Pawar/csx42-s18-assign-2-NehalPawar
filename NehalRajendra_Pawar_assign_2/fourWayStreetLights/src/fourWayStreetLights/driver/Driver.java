@@ -28,40 +28,70 @@ public class Driver
 		for (String temp : zoom) {
 			//System.out.println(temp);
 			String[] splited = temp.split(" ");
-			System.out.println(splited[0]);
-			System.out.println(splited[1]);
+			//System.out.println(splited[0]);
+			//System.out.println(splited[1]);
 			switch(splited[0])
         {
             case "North":
                 //System.out.println("one");
 		if(splited[1].equals("Green")){
-			System.out.println(NorthCars);
 			NorthCars.remove(NorthCars.size()-1);
-			System.out.println(NorthCars);
 			Obj1.goNorth();
 		}
 		else if(splited[1].equals("Red")){
-		
+			Obj1.goRed();
+
 		}
 		else{
 			String[] splitedCars = splited[1].split(",");
 			NorthCars.addAll(Arrays.asList(splitedCars));
 		}
                 break;
+
             case "East":
-                System.out.println("two");
+               if(splited[1].equals("Green")){
+			EastCars.remove(EastCars .size()-1);
+			Obj1.goEast();
+		}
+		else if(splited[1].equals("Red")){
+			Obj1.goRed();
+
+		}
+		else{
+			String[] splitedCars = splited[1].split(",");
+			EastCars.addAll(Arrays.asList(splitedCars));
+		}
                 break;
             case "West":
-                System.out.println("three");
+                if(splited[1].equals("Green")){
+			WestCars.remove(WestCars.size()-1);
+			Obj1.goWest();
+		}
+		else if(splited[1].equals("Red")){
+			Obj1.goRed();
+		}
+		else{
+			String[] splitedCars = splited[1].split(",");
+			WestCars.addAll(Arrays.asList(splitedCars));
+		}
                 break;
        	    case "South":
-                System.out.println("four");
+                if(splited[1].equals("Green")){
+			SouthCars.remove(SouthCars.size()-1);
+			Obj1.goSouth();
+		}
+		else if(splited[1].equals("Red")){
+			Obj1.goRed();
+		}
+		else{
+			String[] splitedCars = splited[1].split(",");
+			SouthCars.addAll(Arrays.asList(splitedCars));
+		}
+
                 break;
             default:
                 System.out.println("Direction not match");
         }
-		}
-
-		
+	}		
 	}
 }

@@ -2,16 +2,28 @@ package fourWayStreetLights.service;
 
 public class SouthStreetLight implements StreetLightsStateI{
 
-public StreetLightsStateI goNorth(){}
+StretLightsContext Obj1 ;
+public SouthStreetLight (StretLightsContext Obj2){
+this.Obj1=Obj2;
+}
 
-public void goWest(){}
+public StreetLightsStateI goNorth(){
+	return new NorthStreetLight(Obj1);
+}
 
-public void goSouth(){}
+public StreetLightsStateI goWest(){
+return new WestStreetLight(Obj1);
+}
 
-public void goEast(){}
+public StreetLightsStateI goSouth(){
+System.out.println("Already South is greeen.");
+	return Obj1;
+}
 
-public void goRed(){}
+public StreetLightsStateI goEast(){
+return new EastStreetLight(Obj1);}
 
-
+public StreetLightsStateI goRed(){
+return new DefaultStreetLight(Obj1);}
 
 }

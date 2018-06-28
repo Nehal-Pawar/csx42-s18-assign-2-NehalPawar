@@ -7,12 +7,12 @@ public interface StreetLightsStateI{
 
 public StreetLightsStateI goNorth();
 
-public void goWest();
+public StreetLightsStateI goWest();
 
-public void goSouth();
+public StreetLightsStateI goSouth();
 
-public void goEast();
+public StreetLightsStateI goEast();
 
-public void goRed();
+public StreetLightsStateI goRed();
 
 }

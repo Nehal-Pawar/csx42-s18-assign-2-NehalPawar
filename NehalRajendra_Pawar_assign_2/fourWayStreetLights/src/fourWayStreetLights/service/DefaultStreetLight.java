@@ -6,18 +6,22 @@ public DefaultStreetLight (StretLightsContext Obj2){
 this.Obj1=Obj2;
 }
 public StreetLightsStateI goNorth(){
-	return new NorthStreetLight();
+	System.out.println("obj created");
+	return new NorthStreetLight(Obj1);
 }
 
+public StreetLightsStateI goWest(){
+return new WestStreetLight(Obj1);
+}
 
-public void goWest(){}
+public StreetLightsStateI goSouth(){
+return new SouthStreetLight(Obj1);}
 
-public void goSouth(){}
+public StreetLightsStateI goEast(){
+return new EastStreetLight(Obj1);}
 
-public void goEast(){}
-
-public void goRed(){}
-
-
-
+public StreetLightsStateI goRed(){
+System.out.println("Signal Already Red.");
+	return Obj1;
+}
 }

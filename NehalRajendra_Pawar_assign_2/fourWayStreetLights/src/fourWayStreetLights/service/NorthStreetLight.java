@@ -12,14 +12,19 @@ public StreetLightsStateI goNorth(){
 }
 
 
-public void goWest(){}
 
-public void goSouth(){}
+public StreetLightsStateI goWest(){
+return new WestStreetLight(Obj1);
+}
 
-public void goEast(){}
+public StreetLightsStateI goSouth(){
+return new SouthStreetLight(Obj1);}
 
-public void goRed(){}
+public StreetLightsStateI goEast(){
+return new EastStreetLight(Obj1);}
 
+public StreetLightsStateI goRed(){
+return new DefaultStreetLight(Obj1);}
 
 
 }

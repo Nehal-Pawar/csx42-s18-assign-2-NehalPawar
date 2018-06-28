@@ -15,15 +15,28 @@ Default=new DefaultStreetLight(this);
 CurrentState=Default;
 }
 public StreetLightsStateI goNorth(){
-	return CurrentState.goNorth();
+	CurrentState=CurrentState.goNorth();
+	return CurrentState;
 }
 
-public StreetLightsStateI goWest(){}
+public StreetLightsStateI goWest(){
+CurrentState=CurrentState.goWest();
+return CurrentState;
+}
 
-public StreetLightsStateI goSouth(){}
+public StreetLightsStateI goSouth(){
+CurrentState=CurrentState.goSouth();
+return CurrentState;
+}
 
-public StreetLightsStateI goEast(){}
+public StreetLightsStateI goEast(){
+CurrentState=CurrentState.goEast();
+return CurrentState;
+}
 
-public StreetLightsStateI goRed(){}
+public StreetLightsStateI goRed(){
+CurrentState=CurrentState.goRed();
+return CurrentState;
+}
 
 }
