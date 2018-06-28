@@ -1,5 +1,7 @@
 package fourWayStreetLights.service;
 import fourWayStreetLights.util.MyLogger;
+import java.util.*;
+import fourWayStreetLights.util.Results;
 
 public class WestStreetLight implements StreetLightsStateI{
 
@@ -10,18 +12,21 @@ this.Obj1=Obj2;
 }
 
 public StreetLightsStateI goNorth(){
+Results.storeNewResult("Current Context State changed to North Green");
 	return new NorthStreetLight(Obj1);
 }
 
 public StreetLightsStateI goWest(){
-System.out.println("Already West is greeen.");
+Results.storeNewResult("Already West is greeen.");
 	return Obj1;
 }
 
 public StreetLightsStateI goSouth(){
+Results.storeNewResult("Current Context State changed to South Green");
 return new SouthStreetLight(Obj1);}
 
 public StreetLightsStateI goEast(){
+Results.storeNewResult("Current Context State changed to East Green");
 return new EastStreetLight(Obj1);}
 
 public StreetLightsStateI goRed(){

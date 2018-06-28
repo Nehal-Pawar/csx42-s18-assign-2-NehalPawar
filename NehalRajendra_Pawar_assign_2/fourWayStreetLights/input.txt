@@ -6,4 +6,6 @@ West Green
 West Red
 East Green
 East Red
-East Red
+South ce,c4,c,cg
+South Green
+South Red

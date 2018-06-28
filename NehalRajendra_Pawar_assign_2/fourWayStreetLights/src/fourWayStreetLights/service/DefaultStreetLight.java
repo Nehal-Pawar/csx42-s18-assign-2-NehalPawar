@@ -1,5 +1,6 @@
 package fourWayStreetLights.service;
 import fourWayStreetLights.util.MyLogger;
+import fourWayStreetLights.util.Results;
 
 public class DefaultStreetLight implements StreetLightsStateI{
 StretLightsContext Obj1 ;
@@ -8,7 +9,7 @@ this.Obj1=Obj2;
 }
 public StreetLightsStateI goNorth(){
 	//System.out.println("obj created");
-	MyLogger.writeMessage ("Current Context State changed to North Green",MyLogger.DebugLevel.AllStates);
+Results.storeNewResult("Current Context State changed to North Green");
 	return new NorthStreetLight(Obj1);
 }
 

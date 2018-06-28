@@ -19,6 +19,7 @@ public class Results  implements FileDisplayInterface, StdoutDisplayInterface{
 				//byte[] strToBytes = str.getBytes();
 				//outputStream.write(strToBytes);
 				writer.write( str );
+				writer.write("\n");
 			}
 			//outputStream.close();
 			writer.close();	

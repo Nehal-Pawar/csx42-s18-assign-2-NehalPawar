@@ -1,7 +1,7 @@
 package fourWayStreetLights.service;
 import fourWayStreetLights.util.MyLogger;
 import java.util.*;
-
+import fourWayStreetLights.util.Results;
 
 public class NorthStreetLight implements StreetLightsStateI{
 StretLightsContext Obj1 ;
@@ -15,26 +15,25 @@ public StreetLightsStateI goNorth(){
 	MyLogger.writeMessage ("Already North is greeen.",MyLogger.DebugLevel.AllStates);
 	return Obj1;
 }
-
-
-
 public StreetLightsStateI goWest(){
-MyLogger.writeMessage ("Current Context State changed to West Green",MyLogger.DebugLevel.AllStates);
+Results.storeNewResult("Current Context State changed to West Green");
 return new WestStreetLight(Obj1);
 }
 
 public StreetLightsStateI goSouth(){
-MyLogger.writeMessage ("Current Context State changed to South Green",MyLogger.DebugLevel.AllStates);
+Results.storeNewResult("Current Context State changed to South Green");
 return new SouthStreetLight(Obj1);}
 
 public StreetLightsStateI goEast(){
-MyLogger.writeMessage ("Current Context State changed to East Green",MyLogger.DebugLevel.AllStates);
+Results.storeNewResult("Current Context State changed to East Green");
 return new EastStreetLight(Obj1);}
 
 public StreetLightsStateI goRed(){
-MyLogger.writeMessage ("North Signal is Red.",MyLogger.DebugLevel.AllStates);
-return new DefaultStreetLight(Obj1);}
+Results.storeNewResult("Signal Already Red.");
 
+//System.out.println("Signal Already Red.");
+	return Obj1;
+}
 public void RemoveCars(){
 NorthCars.remove(0);
 }

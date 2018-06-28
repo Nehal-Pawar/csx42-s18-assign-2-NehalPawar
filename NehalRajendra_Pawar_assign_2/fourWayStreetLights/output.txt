@@ -1,0 +1,13 @@
+Cars in Queue North [C4, c5, c7, c9]
+Current Context State changed to North Green
+Cars in Queue North [c5, c7, c9]
+Cars in Queue West [C5, c7]
+Current Context State changed to West Green
+Cars in Queue West [c7]
+Cars in Queue East [C1, C2, C3]
+Current Context State changed to East Green
+Cars in Queue East [C2, C3]
+Cars in Queue South [ce, c4, c, cg]
+Current Context State changed to South Green
+Cars in Queue South [c4, c, cg]
+South Signal is Red.
