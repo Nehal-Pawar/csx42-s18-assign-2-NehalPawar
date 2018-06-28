@@ -1,4 +1,5 @@
 package fourWayStreetLights.service;
+import fourWayStreetLights.util.MyLogger;
 
 public class EastStreetLight implements StreetLightsStateI{
 
@@ -24,6 +25,7 @@ System.out.println("Already East is greeen.");
 }
 
 public StreetLightsStateI goRed(){
+MyLogger.writeMessage ("East Signal is Red.",MyLogger.DebugLevel.AllStates);
 return new DefaultStreetLight(Obj1);}
 
 

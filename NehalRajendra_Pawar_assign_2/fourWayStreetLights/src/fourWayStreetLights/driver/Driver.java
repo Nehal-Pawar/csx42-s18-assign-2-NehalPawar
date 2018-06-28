@@ -1,6 +1,7 @@
 package fourWayStreetLights.driver;
 import fourWayStreetLights.util.FileProcessor;
 import fourWayStreetLights.util.Results;
+import fourWayStreetLights.util.MyLogger;
 import fourWayStreetLights.service.StretLightsContext;
 import fourWayStreetLights.test.MyArrayListTest;
 import java.util.*;
@@ -9,13 +10,14 @@ public class Driver
 {
 	public static void main(String[] args)
 	{
-		if (2 != args.length)
+		if (3 != args.length)
 		{
-			System.err.println("incorrect args passed, Expected <input.txt> <output.txt>. \n exiting \n");
+			System.err.println("incorrect args passed, Expected <input.txt> <output.txt> <debug value>. \n exiting \n");
 			System.exit(0);
 		}
 		String INPUTFILE = args[0];
 		String OUTPUTFILE = args[1];
+		MyLogger.setDebugValue(Integer.parseInt(args[2]));
 		StretLightsContext Obj1 = new StretLightsContext();
 		FileProcessor F1 = new FileProcessor();
 		List<String> zoom = new ArrayList<>();

@@ -1,4 +1,5 @@
 package fourWayStreetLights.service;
+import fourWayStreetLights.util.MyLogger;
 
 public class WestStreetLight implements StreetLightsStateI{
 
@@ -23,6 +24,8 @@ public StreetLightsStateI goEast(){
 return new EastStreetLight(Obj1);}
 
 public StreetLightsStateI goRed(){
+MyLogger.writeMessage ("West Signal is Red.",MyLogger.DebugLevel.AllStates);
+
 return new DefaultStreetLight(Obj1);}
 
 }
