@@ -38,10 +38,13 @@ public class Driver
                     //System.out.println("one");
                     if (splited[1].equals("Green"))
                     {
-                        Results.storeNewResult("Cars in Queue North " + NorthStreetLight.NorthCars);
+			int count=NorthStreetLight.NorthCars.size();
+			if(count>=2)
+                        Results.storeNewResult("Cars in Queue before:North " + NorthStreetLight.NorthCars);
                         Obj1.goNorth();
                         Obj1.RemoveCars();
-                        Results.storeNewResult("Cars in Queue North " + NorthStreetLight.NorthCars);
+			if(count>=1)
+                        Results.storeNewResult("Cars in Queue after:North " + NorthStreetLight.NorthCars);
                     }
                     else if (splited[1].equals("Red"))
                     {
@@ -58,10 +61,13 @@ public class Driver
                 case "East":
                     if (splited[1].equals("Green"))
                     {
-                        Results.storeNewResult("Cars in Queue East " + EastStreetLight.EastCars);
+			int count=EastStreetLight.EastCars.size();
+			if(count>=2)
+                        Results.storeNewResult("Cars in Queue before:East " + EastStreetLight.EastCars);
                         Obj1.goEast();
                         Obj1.RemoveCars();
-                        Results.storeNewResult("Cars in Queue East " + EastStreetLight.EastCars);
+			if(count>=1)
+                        Results.storeNewResult("Cars in Queue after:East " + EastStreetLight.EastCars);
                     }
                     else if (splited[1].equals("Red"))
                     {
@@ -76,10 +82,13 @@ public class Driver
                 case "West":
                     if (splited[1].equals("Green"))
                     {
-                        Results.storeNewResult("Cars in Queue West " + WestStreetLight.WestCars);
+			int count=WestStreetLight.WestCars.size();
+			if(count>=2)
+                        Results.storeNewResult("Cars in Queue before:West " + WestStreetLight.WestCars);
                         Obj1.goWest();
                         Obj1.RemoveCars();
-                        Results.storeNewResult("Cars in Queue West " + WestStreetLight.WestCars);
+			if(count>=1)
+                        Results.storeNewResult("Cars in Queue after:West " + WestStreetLight.WestCars);
                     }
                     else if (splited[1].equals("Red"))
                     {
@@ -94,10 +103,13 @@ public class Driver
                 case "South":
                     if (splited[1].equals("Green"))
                     {
-                        Results.storeNewResult("Cars in Queue South " + SouthStreetLight.SouthCars);
+			int Count=SouthStreetLight.SouthCars.size();
+			if(Count>=2)
+                        Results.storeNewResult("Cars in Queue before:South " + SouthStreetLight.SouthCars);
                         Obj1.goSouth();
                         Obj1.RemoveCars();
-                        Results.storeNewResult("Cars in Queue South " + SouthStreetLight.SouthCars);
+			if(Count>=1)
+                        Results.storeNewResult("Cars in Queue after:South " + SouthStreetLight.SouthCars);
                     }
                     else if (splited[1].equals("Red"))
                     {

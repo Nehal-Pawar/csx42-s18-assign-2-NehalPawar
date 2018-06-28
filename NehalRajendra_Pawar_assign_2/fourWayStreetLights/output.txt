@@ -1,13 +1,34 @@
-Cars in Queue North [C4, c5, c7, c9]
+Cars in Queue before:North [C4, c5, c7, c9]
 Current Context State changed to North Green
-Cars in Queue North [c5, c7, c9]
-Cars in Queue West [C5, c7]
+Cars in Queue after:North [c7, c9]
+Cars in Queue before:North [c7, c9]
+Cars in Queue after:North []
+No Cars in queue.
+No Cars in queue.
+Signal Already Red.
+Signal Already Red.
+Signal Already Red.
+Cars in Queue before:West [C5, c7]
 Current Context State changed to West Green
-Cars in Queue West [c7]
-Cars in Queue East [C1, C2, C3]
+Cars in Queue after:West []
+Already West is greeen.
+No Cars in queue.
+Already West is greeen.
+No Cars in queue.
+Signal Already Red.
+Signal Already Red.
+Cars in Queue before:East [C1, C2, C3]
 Current Context State changed to East Green
-Cars in Queue East [C2, C3]
-Cars in Queue South [ce, c4, c, cg]
+Cars in Queue after:East [C3]
+Already East is greeen.
+Cars in Queue after:East []
+Signal Already Red.
+Signal Already Red.
+Cars in Queue before:South [ce, c4, c, cg]
 Current Context State changed to South Green
-Cars in Queue South [c4, c, cg]
+Cars in Queue after:South [c, cg]
+Cars in Queue before:South [c, cg]
+Already South is greeen.
+Cars in Queue after:South []
 South Signal is Red.
+Signal Already Red.
