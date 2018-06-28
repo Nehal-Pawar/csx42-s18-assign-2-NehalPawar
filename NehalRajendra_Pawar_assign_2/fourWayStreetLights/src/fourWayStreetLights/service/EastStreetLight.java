@@ -2,7 +2,7 @@ package fourWayStreetLights.service;
 
 public class EastStreetLight implements StreetLightsStateI{
 
-public void goNorth(){}
+public StreetLightsStateI goNorth(){}
 
 public void goWest(){}
 
