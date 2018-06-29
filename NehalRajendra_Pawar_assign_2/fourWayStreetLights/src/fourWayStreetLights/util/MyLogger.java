@@ -1,5 +1,7 @@
 package fourWayStreetLights.util;
 
+import fourWayStreetLights.util.MyLogger;
+
 public class MyLogger
 {
 
