@@ -35,7 +35,7 @@ public class SouthStreetLight implements StreetLightsStateI
         }
         public StreetLightsStateI goRed()
         {
-            Results.storeNewResult("South Signal is Red.");
+            Results.storeNewResult("Context State change South Signal is Red.");
             return new DefaultStreetLight(Obj1);
         }
         public void RemoveCars()

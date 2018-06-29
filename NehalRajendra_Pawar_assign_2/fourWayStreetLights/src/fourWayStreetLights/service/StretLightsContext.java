@@ -4,7 +4,9 @@ package fourWayStreetLights.service;
 public class StretLightsContext implements StreetLightsStateI
 {
 
-    StreetLightsStateI North,East,West,South,CurrentState,Default;
+    StreetLightsStateI North,East,West,South,Default;
+
+public static StreetLightsStateI  CurrentState;
         public StretLightsContext()
         {
             North = new NorthStreetLight(this);

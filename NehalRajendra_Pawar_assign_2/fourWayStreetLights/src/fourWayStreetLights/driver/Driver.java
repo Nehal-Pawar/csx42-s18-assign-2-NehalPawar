@@ -28,14 +28,10 @@ public class Driver
         System.out.println(zoom);
         for (String temp : zoom)
         {
-            //System.out.println(temp);
             String[] splited = temp.split(" ");
-            //System.out.println(splited[0]);
-            //System.out.println(splited[1]);
             switch (splited[0])
             {
                 case "North":
-                    //System.out.println("one");
                     if (splited[1].equals("Green"))
                     {
 			int count=NorthStreetLight.NorthCars.size();
@@ -48,7 +44,10 @@ public class Driver
                     }
                     else if (splited[1].equals("Red"))
                     {
+                        if(StretLightsContext.CurrentState instanceof NorthStreetLight||StretLightsContext.CurrentState instanceof DefaultStreetLight)
                         Obj1.goRed();
+			else
+			Results.storeNewResult("North is Already Red. No State Change");
                     }
                     else
                     {
@@ -71,7 +70,10 @@ public class Driver
                     }
                     else if (splited[1].equals("Red"))
                     {
+                        if(StretLightsContext.CurrentState instanceof EastStreetLight||StretLightsContext.CurrentState instanceof DefaultStreetLight)
                         Obj1.goRed();
+			else
+			Results.storeNewResult("East is Already Red. No State Change");
                     }
                     else
                     {
@@ -92,7 +94,11 @@ public class Driver
                     }
                     else if (splited[1].equals("Red"))
                     {
+                        if(StretLightsContext.CurrentState instanceof WestStreetLight||StretLightsContext.CurrentState instanceof DefaultStreetLight)
                         Obj1.goRed();
+			else
+			Results.storeNewResult("West is Already Red. No State Change");
+
                     }
                     else
                     {
@@ -113,7 +119,10 @@ public class Driver
                     }
                     else if (splited[1].equals("Red"))
                     {
+			if(StretLightsContext.CurrentState instanceof SouthStreetLight||StretLightsContext.CurrentState instanceof DefaultStreetLight)
                         Obj1.goRed();
+			else
+			 Results.storeNewResult("South is Already Red. No State Change");
                     }
                     else
                     {

@@ -39,7 +39,7 @@ public class WestStreetLight implements StreetLightsStateI
 
         public StreetLightsStateI goRed()
         {
-            MyLogger.writeMessage("West Signal is Red.", MyLogger.DebugLevel.AllStates);
+            Results.storeNewResult("Context State change West Signal is Red.");
 
             return new DefaultStreetLight(Obj1);
         }

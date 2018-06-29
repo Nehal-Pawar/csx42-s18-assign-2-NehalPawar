@@ -36,7 +36,7 @@ public class NorthStreetLight implements StreetLightsStateI
 
         public StreetLightsStateI goRed()
         {
-            Results.storeNewResult("North Signal is Red.");
+            Results.storeNewResult("Context State change North Signal is Red.");
 
             //System.out.println("Signal Already Red.");
             return new DefaultStreetLight(Obj1);
