@@ -21,7 +21,7 @@ public class Driver
         StretLightsContext Obj1 = new StretLightsContext();
         FileProcessor F1 = new FileProcessor();
         List<String> zoom = new ArrayList<>();
-
+	int count;
         Results Re = new Results();
 
         zoom = F1.openFile(INPUTFILE);
@@ -34,7 +34,7 @@ public class Driver
                 case "North":
                     if (splited[1].equals("Green"))
                     {
-			int count=NorthStreetLight.NorthCars.size();
+			count=NorthStreetLight.NorthCars.size();
 			if(StretLightsContext.CurrentState instanceof NorthStreetLight){
 			 Results.storeNewResult("Context is already in green");
 			}
@@ -42,7 +42,8 @@ public class Driver
 			if(count>=2)
                         Results.storeNewResult("Cars in Queue before:North " + NorthStreetLight.NorthCars);                        
 			Obj1.goNorth();
-                        Obj1.RemoveCars();}
+                        Obj1.RemoveCars();
+			}
 			if(count>=1)
                         Results.storeNewResult("Cars in Queue after:North " + NorthStreetLight.NorthCars);
 			
@@ -58,14 +59,18 @@ public class Driver
                     {
                         String[] splitedCars = splited[1].split(",");
                         NorthStreetLight.NorthCars.addAll(Arrays.asList(splitedCars));
-
+			if(StretLightsContext.CurrentState instanceof NorthStreetLight){
+			Results.storeNewResult("Cars in Queue after new car added:North " + NorthStreetLight.NorthCars);
+		        Obj1.RemoveCars();
+			Results.storeNewResult("Cars in Queue after new car added:North " + NorthStreetLight.NorthCars);
+			}
                     }
                     break;
 
                 case "East":
                     if (splited[1].equals("Green"))
                     {
-			int count=EastStreetLight.EastCars.size();
+			count=EastStreetLight.EastCars.size();
 			if(StretLightsContext.CurrentState instanceof EastStreetLight){
 			 Results.storeNewResult("Context is already in green");
 			}
@@ -88,12 +93,18 @@ public class Driver
                     {
                         String[] splitedCars = splited[1].split(",");
                         EastStreetLight.EastCars.addAll(Arrays.asList(splitedCars));
+			if(StretLightsContext.CurrentState instanceof EastStreetLight){
+			Results.storeNewResult("Cars in Queue after new car added:North " + EastStreetLight.EastCars);
+		        Obj1.RemoveCars();
+			Results.storeNewResult("Cars in Queue after new car added:North " + EastStreetLight.EastCars);
+			}
+
                     }
                     break;
                 case "West":
                     if (splited[1].equals("Green"))
                     {
-			int count=WestStreetLight.WestCars.size();
+			count=WestStreetLight.WestCars.size();
 			if(StretLightsContext.CurrentState instanceof WestStreetLight){
 			 Results.storeNewResult("Context is already in green");
 			}
@@ -117,22 +128,28 @@ public class Driver
                     {
                         String[] splitedCars = splited[1].split(",");
                         WestStreetLight.WestCars.addAll(Arrays.asList(splitedCars));
+			if(StretLightsContext.CurrentState instanceof WestStreetLight){
+			Results.storeNewResult("Cars in Queue after new car added:North " + WestStreetLight.WestCars);
+		        Obj1.RemoveCars();
+			Results.storeNewResult("Cars in Queue after new car added:North " + WestStreetLight.WestCars);
+			}
+
                     }
                     break;
                 case "South":
                     if (splited[1].equals("Green"))
                     {
-			int Count=SouthStreetLight.SouthCars.size();
+			count=SouthStreetLight.SouthCars.size();
 			if(StretLightsContext.CurrentState instanceof SouthStreetLight){
 			 Results.storeNewResult("Context is already in green");
 			}
 			else{
 
-			if(Count>=2)
+			if(count>=2)
                         Results.storeNewResult("Cars in Queue before:South " + SouthStreetLight.SouthCars);
                         Obj1.goSouth();
                         Obj1.RemoveCars();}
-			if(Count>=1)
+			if(count>=1)
                         Results.storeNewResult("Cars in Queue after:South " + SouthStreetLight.SouthCars);
                     }
                     else if (splited[1].equals("Red"))
@@ -146,8 +163,12 @@ public class Driver
                     {
                         String[] splitedCars = splited[1].split(",");
                         SouthStreetLight.SouthCars.addAll(Arrays.asList(splitedCars));
+			if(StretLightsContext.CurrentState instanceof SouthStreetLight){
+			Results.storeNewResult("Cars in Queue after new car added:North " + SouthStreetLight.SouthCars);
+		        Obj1.RemoveCars();
+			Results.storeNewResult("Cars in Queue after new car added:North " + SouthStreetLight.SouthCars);
+			}
                     }
-
                     break;
                 default:
                     MyLogger.writeMessage("Direction not match", MyLogger.DebugLevel.AllStates);

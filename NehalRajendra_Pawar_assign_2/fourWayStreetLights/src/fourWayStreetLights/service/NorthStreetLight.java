@@ -6,6 +6,7 @@ import fourWayStreetLights.util.Results;
 public class NorthStreetLight implements StreetLightsStateI
 {
     StretLightsContext Obj1;
+	public static int CarsPassed=2;
         public static List<String> NorthCars = new ArrayList<>();
         public NorthStreetLight(StretLightsContext Obj2)
         {
@@ -36,18 +37,20 @@ public class NorthStreetLight implements StreetLightsStateI
         public StreetLightsStateI goRed()
         {
             Results.storeNewResult("Context State change North Signal is Red.");
-
+		CarsPassed=2;
             //System.out.println("Signal Already Red.");
             return new DefaultStreetLight(Obj1);
         }
         public StreetLightsStateI RemoveCars()
         {
-	    if(NorthCars.size()>=2){
+	    if(NorthCars.size()>=2&&CarsPassed==2){
             NorthCars.remove(0);
             NorthCars.remove(0);
+		CarsPassed=0;
             return new DefaultStreetLight(Obj1);
 	    }
-	    else if(NorthCars.size()==1){
+	    else if(NorthCars.size()==1||CarsPassed==1){
+		CarsPassed=1;
 	    NorthCars.remove(0);
 	    }
 	    else{

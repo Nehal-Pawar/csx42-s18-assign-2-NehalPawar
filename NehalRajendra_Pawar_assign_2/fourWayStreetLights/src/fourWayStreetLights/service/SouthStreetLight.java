@@ -7,6 +7,7 @@ public class SouthStreetLight implements StreetLightsStateI
 {
 
     StretLightsContext Obj1;
+	public static int CarsPassed=2;
         public static List<String> SouthCars = new ArrayList<>();
         public SouthStreetLight(StretLightsContext Obj2)
         {
@@ -36,17 +37,20 @@ public class SouthStreetLight implements StreetLightsStateI
         public StreetLightsStateI goRed()
         {
             Results.storeNewResult("Context State change South Signal is Red.");
+		CarsPassed=2;
             return new DefaultStreetLight(Obj1);
         }
         public StreetLightsStateI RemoveCars()
         {
-	    if(SouthCars.size()>=2){
+	    if(SouthCars.size()>=2&&CarsPassed==2){
             SouthCars.remove(0);
             SouthCars.remove(0);
+		CarsPassed=0;
             return new DefaultStreetLight(Obj1);
 	    }
-	    else if(SouthCars.size()==1){
+	    else if(SouthCars.size()==1||CarsPassed==1){
 	    SouthCars.remove(0);
+		CarsPassed=1;
 	    }
 	    else{
 	    Results.storeNewResult("No Cars in queue.");
