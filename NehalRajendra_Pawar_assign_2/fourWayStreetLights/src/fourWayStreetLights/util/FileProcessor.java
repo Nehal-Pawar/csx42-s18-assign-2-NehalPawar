@@ -27,7 +27,7 @@ public class FileProcessor
         catch (FileNotFoundException e)
         {
 		MyLogger.writeMessage("File not found at location: " + InputFileName, MyLogger.DebugLevel.FILE_PROCESSOR);
-            //System.out.println("File not found at location: " + InputFileName);
+            System.err.println("File not found at location: " + InputFileName);
             System.exit(1);
         }
         return zoom;
@@ -41,7 +41,7 @@ public class FileProcessor
         }
         catch (Exception e)
         {
-            System.out.println("Error while reading file");
+            System.err.println("Error while reading file");
 		MyLogger.writeMessage("Error while reading file" , MyLogger.DebugLevel.FILE_PROCESSOR);
 
             System.exit(1);

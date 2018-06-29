@@ -3,10 +3,12 @@ package fourWayStreetLights.service;
 
 public class StretLightsContext implements StreetLightsStateI
 {
-
     StreetLightsStateI North,East,West,South,Default;
 
-public static StreetLightsStateI  CurrentState;
+	public static StreetLightsStateI  CurrentState;
+	/*
+	//Create objets of all state classes to call constructor
+	*/
         public StretLightsContext()
         {
             North = new NorthStreetLight(this);

@@ -10,22 +10,32 @@ public class Driver
 {
     public static void main(String[] args)
     {
-        if (3 != args.length)
-        {
-            System.err.println("incorrect args passed, Expected <input.txt> <output.txt> <debug value>. \n exiting \n");
-            System.exit(0);
-        }
         String INPUTFILE = args[0];
         String OUTPUTFILE = args[1];
-        MyLogger.setDebugValue(Integer.parseInt(args[2]));
+ 	if ((INPUTFILE.equals("${arg0}")) || (OUTPUTFILE.equals("${arg1}")) || (args[2].equals("${arg2}")))
+        {
+            System.err.println("incorrect args passed, Expected <input.txt> <output.txt> <debug value>. \n exiting \n");
+            System.exit(1);
+        }
+	try{
+        MyLogger.setDebugValue(Integer.parseInt(args[2]));}
+	catch(Exception e){
+	System.err.println("Third argument cannot be parse to integer.");
+	System.exit(1);
+	}
         StretLightsContext Obj1 = new StretLightsContext();
         FileProcessor F1 = new FileProcessor();
         List<String> zoom = new ArrayList<>();
 	int count;
         Results Re = new Results();
-
+	/*
+	//Read file and add to array
+	*/
         zoom = F1.openFile(INPUTFILE);
-        System.out.println(zoom);
+      	/*
+	//Read array in loop and parse
+	*/
+
         for (String temp : zoom)
         {
             String[] splited = temp.split(" ");
