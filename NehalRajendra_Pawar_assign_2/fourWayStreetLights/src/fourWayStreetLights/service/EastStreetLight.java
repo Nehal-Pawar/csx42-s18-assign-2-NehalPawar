@@ -37,11 +37,12 @@ public class EastStreetLight implements StreetLightsStateI
             Results.storeNewResult("Context State change East Signal is Red.");
             return new DefaultStreetLight(Obj1);
         }
-        public void RemoveCars()
+        public StreetLightsStateI RemoveCars()
         {
              if(EastCars.size()>=2){
             EastCars.remove(0);
             EastCars.remove(0);
+	    return new DefaultStreetLight(Obj1);
 	    }
 	    else if(EastCars.size()==1){
 	    EastCars.remove(0);
@@ -49,5 +50,6 @@ public class EastStreetLight implements StreetLightsStateI
 	    else{
 	    Results.storeNewResult("No Cars in queue.");
 	    }
+	    return new EastStreetLight(Obj1);
         }
 }

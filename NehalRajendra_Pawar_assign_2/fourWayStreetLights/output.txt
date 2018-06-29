@@ -1,37 +1,41 @@
-Cars in Queue before:North [C4, c5, c7, c9]
+Cars in Queue before:North [C1, c2, c3, c4]
 Current Context State changed to North Green
-Cars in Queue after:North [c7, c9]
-Cars in Queue before:North [c7, c9]
-Cars in Queue after:North []
-No Cars in queue.
-No Cars in queue.
+Cars in Queue after:North [c3, c4]
+Context is already in green
+Cars in Queue after:North [c3, c4]
+Context is already in green
+Cars in Queue after:North [c3, c4]
+Context is already in green
+Cars in Queue after:North [c3, c4]
 Context State change North Signal is Red.
 Signal Already Red.
 Signal Already Red.
-Cars in Queue before:West [C5, c7]
+Cars in Queue before:West [C8, c9, C88, c99]
 Current Context State changed to West Green
-Cars in Queue after:West []
-Already West is greeen.
-No Cars in queue.
-Already West is greeen.
-No Cars in queue.
+Cars in Queue after:West [C88, c99]
+Context is already in green
+Cars in Queue after:West [C88, c99]
+Context is already in green
+Cars in Queue after:West [C88, c99]
 Context State change West Signal is Red.
 Signal Already Red.
 Signal Already Red.
-Cars in Queue before:East [C1, C2, C3]
+Cars in Queue before:East [C5, C6, C7, C55, C66, C77]
 Current Context State changed to East Green
-Cars in Queue after:East [C3]
-Already East is greeen.
-Cars in Queue after:East []
+Cars in Queue after:East [C7, C55, C66, C77]
+Context is already in green
+Cars in Queue after:East [C7, C55, C66, C77]
 South is Already Red. No State Change
 Context State change East Signal is Red.
 Signal Already Red.
 Signal Already Red.
-Cars in Queue before:South [ce, c4, c, cg]
+Cars in Queue before:South [D1, D2, D3, D4, D11, D22, D33, D44]
 Current Context State changed to South Green
-Cars in Queue after:South [c, cg]
-Cars in Queue before:South [c, cg]
-Already South is greeen.
-Cars in Queue after:South []
+Cars in Queue after:South [D3, D4, D11, D22, D33, D44]
+Context is already in green
+Cars in Queue after:South [D3, D4, D11, D22, D33, D44]
 Context State change South Signal is Red.
 Signal Already Red.
+Cars in Queue before:North [c3, c4]
+Current Context State changed to North Green
+Cars in Queue after:North []

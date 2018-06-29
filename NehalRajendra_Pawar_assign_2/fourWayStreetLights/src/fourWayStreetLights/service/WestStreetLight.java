@@ -44,12 +44,13 @@ public class WestStreetLight implements StreetLightsStateI
             return new DefaultStreetLight(Obj1);
         }
 
-        public void RemoveCars()
+        public StreetLightsStateI RemoveCars()
         {
 
 	    if(WestCars .size()>=2){
             WestCars .remove(0);
             WestCars .remove(0);
+	    return new DefaultStreetLight(Obj1);
 	    }
 	    else if(WestCars.size()==1){
 	    WestCars .remove(0);
@@ -57,6 +58,6 @@ public class WestStreetLight implements StreetLightsStateI
 	    else{
 	    Results.storeNewResult("No Cars in queue.");
 	    }
-
+       	    return new WestStreetLight(Obj1);
         }
 }

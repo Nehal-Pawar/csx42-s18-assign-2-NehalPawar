@@ -16,5 +16,5 @@ public interface StreetLightsStateI
 
     public StreetLightsStateI goRed();
 
-    public void RemoveCars();
+    public StreetLightsStateI RemoveCars();
 }

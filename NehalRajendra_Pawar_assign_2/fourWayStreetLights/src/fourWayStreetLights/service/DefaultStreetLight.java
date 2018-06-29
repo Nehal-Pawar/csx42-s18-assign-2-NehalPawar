@@ -35,8 +35,8 @@ public class DefaultStreetLight implements StreetLightsStateI
             Results.storeNewResult("Signal Already Red.");
             return new DefaultStreetLight(Obj1);
         }
-        public void RemoveCars() { 
-	
+        public StreetLightsStateI RemoveCars() { 
+	 return new DefaultStreetLight(Obj1);
 	}
         
 }

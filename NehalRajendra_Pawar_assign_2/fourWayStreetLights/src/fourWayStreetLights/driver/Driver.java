@@ -35,12 +35,17 @@ public class Driver
                     if (splited[1].equals("Green"))
                     {
 			int count=NorthStreetLight.NorthCars.size();
+			if(StretLightsContext.CurrentState instanceof NorthStreetLight){
+			 Results.storeNewResult("Context is already in green");
+			}
+			else{			
 			if(count>=2)
-                        Results.storeNewResult("Cars in Queue before:North " + NorthStreetLight.NorthCars);
-                        Obj1.goNorth();
-                        Obj1.RemoveCars();
+                        Results.storeNewResult("Cars in Queue before:North " + NorthStreetLight.NorthCars);                        
+			Obj1.goNorth();
+                        Obj1.RemoveCars();}
 			if(count>=1)
                         Results.storeNewResult("Cars in Queue after:North " + NorthStreetLight.NorthCars);
+			
                     }
                     else if (splited[1].equals("Red"))
                     {
@@ -61,10 +66,14 @@ public class Driver
                     if (splited[1].equals("Green"))
                     {
 			int count=EastStreetLight.EastCars.size();
+			if(StretLightsContext.CurrentState instanceof EastStreetLight){
+			 Results.storeNewResult("Context is already in green");
+			}
+			else{
 			if(count>=2)
                         Results.storeNewResult("Cars in Queue before:East " + EastStreetLight.EastCars);
                         Obj1.goEast();
-                        Obj1.RemoveCars();
+                        Obj1.RemoveCars();}
 			if(count>=1)
                         Results.storeNewResult("Cars in Queue after:East " + EastStreetLight.EastCars);
                     }
@@ -85,10 +94,14 @@ public class Driver
                     if (splited[1].equals("Green"))
                     {
 			int count=WestStreetLight.WestCars.size();
+			if(StretLightsContext.CurrentState instanceof WestStreetLight){
+			 Results.storeNewResult("Context is already in green");
+			}
+			else{
 			if(count>=2)
                         Results.storeNewResult("Cars in Queue before:West " + WestStreetLight.WestCars);
                         Obj1.goWest();
-                        Obj1.RemoveCars();
+                        Obj1.RemoveCars();}
 			if(count>=1)
                         Results.storeNewResult("Cars in Queue after:West " + WestStreetLight.WestCars);
                     }
@@ -110,10 +123,15 @@ public class Driver
                     if (splited[1].equals("Green"))
                     {
 			int Count=SouthStreetLight.SouthCars.size();
+			if(StretLightsContext.CurrentState instanceof SouthStreetLight){
+			 Results.storeNewResult("Context is already in green");
+			}
+			else{
+
 			if(Count>=2)
                         Results.storeNewResult("Cars in Queue before:South " + SouthStreetLight.SouthCars);
                         Obj1.goSouth();
-                        Obj1.RemoveCars();
+                        Obj1.RemoveCars();}
 			if(Count>=1)
                         Results.storeNewResult("Cars in Queue after:South " + SouthStreetLight.SouthCars);
                     }

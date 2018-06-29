@@ -14,8 +14,7 @@ public class NorthStreetLight implements StreetLightsStateI
 
         public StreetLightsStateI goNorth()
         {
-            //System.out.println("Already North is greeen.");
-            MyLogger.writeMessage("Already North is greeen.", MyLogger.DebugLevel.AllStates);
+            Results.storeNewResult("Already North is greeen.");
             return new NorthStreetLight(Obj1);
         }
         public StreetLightsStateI goWest()
@@ -41,11 +40,12 @@ public class NorthStreetLight implements StreetLightsStateI
             //System.out.println("Signal Already Red.");
             return new DefaultStreetLight(Obj1);
         }
-        public void RemoveCars()
+        public StreetLightsStateI RemoveCars()
         {
 	    if(NorthCars.size()>=2){
             NorthCars.remove(0);
             NorthCars.remove(0);
+            return new DefaultStreetLight(Obj1);
 	    }
 	    else if(NorthCars.size()==1){
 	    NorthCars.remove(0);
@@ -53,5 +53,6 @@ public class NorthStreetLight implements StreetLightsStateI
 	    else{
 	    Results.storeNewResult("No Cars in queue.");
 	    }
+	    return new NorthStreetLight(Obj1);
         }
 }
